@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-02-2026 a las 00:09:39
+-- Tiempo de generación: 27-02-2026 a las 00:11:49
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `refatech`
 --
+CREATE DATABASE IF NOT EXISTS `refatech` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `refatech`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `compra`
 --
 
+DROP TABLE IF EXISTS `compra`;
 CREATE TABLE IF NOT EXISTS `compra` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `usuario_id` bigint(20) UNSIGNED NOT NULL,
@@ -253,6 +256,7 @@ INSERT INTO `compra` (`id`, `usuario_id`, `producto_id`, `cantidad`, `total`, `f
 -- Estructura de tabla para la tabla `migrations`
 --
 
+DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `migration` varchar(255) NOT NULL,
@@ -276,6 +280,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Estructura de tabla para la tabla `producto`
 --
 
+DROP TABLE IF EXISTS `producto`;
 CREATE TABLE IF NOT EXISTS `producto` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre_producto` varchar(255) NOT NULL,
@@ -603,6 +608,7 @@ INSERT INTO `producto` (`id`, `nombre_producto`, `descripcion`, `precio`, `stock
 -- Estructura de tabla para la tabla `proveedor`
 --
 
+DROP TABLE IF EXISTS `proveedor`;
 CREATE TABLE IF NOT EXISTS `proveedor` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
@@ -977,6 +983,7 @@ INSERT INTO `proveedor` (`id`, `nombre`, `direccion`, `telefono`, `email`, `crea
 -- Estructura de tabla para la tabla `usuario`
 --
 
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
